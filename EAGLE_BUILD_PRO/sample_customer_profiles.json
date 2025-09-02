@@ -1,0 +1,67 @@
+[
+    {
+        "Use Case": "New Parents",
+        "Client ID": "C001",
+        "Name": "John & Lisa",
+        "Age": 32,
+        "Marital Status": "Married",
+        "Children": 2,
+        "Income (R)": 85000,
+        "Occupation": "Engineer & Teacher",
+        "Investment Products": "Mutual Funds",
+        "Insurance Products": "None",
+        "Risk Profile": "Moderate"
+    },
+    {
+        "Use Case": "Young Professionals",
+        "Client ID": "C002",
+        "Name": "Maya P.",
+        "Age": 27,
+        "Marital Status": "Single",
+        "Children": 0,
+        "Income (R)": 72000,
+        "Occupation": "Software Developer",
+        "Investment Products": "Crypto, Tech ETFs",
+        "Insurance Products": "None",
+        "Risk Profile": "Aggressive"
+    },
+    {
+        "Use Case": "Near Retirement",
+        "Client ID": "C003",
+        "Name": "Robert K.",
+        "Age": 61,
+        "Marital Status": "Married",
+        "Children": 3,
+        "Income (R)": 130000,
+        "Occupation": "Retired Executive",
+        "Investment Products": "Bonds, Fixed Deposits",
+        "Insurance Products": "Term Life",
+        "Risk Profile": "Conservative"
+    },
+    {
+        "Use Case": "High Net Worth",
+        "Client ID": "C004",
+        "Name": "Evelyn S.",
+        "Age": 48,
+        "Marital Status": "Divorced",
+        "Children": 1,
+        "Income (R)": 380000,
+        "Occupation": "Business Owner",
+        "Investment Products": "Private Equity, REITs",
+        "Insurance Products": "Whole Life",
+        "Risk Profile": "Balanced"
+    },
+    {
+        "Use Case": "No Insurance Coverage",
+        "Client ID": "C005",
+        "Name": "Ahmed Z.",
+        "Age": 36,
+        "Marital Status": "Married",
+        "Children": 2,
+        "Income (R)": 68000,
+        "Occupation": "Accountant",
+        "Investment Products": "None",
+        "Insurance Products": "None",
+        "Risk Profile": "Moderate"
+    }
+]

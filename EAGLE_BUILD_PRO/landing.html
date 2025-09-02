@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Welcome</title>
+    <link href='https://fonts.googleapis.com/css?family=Segoe+UI:400,700&display=swap' rel='stylesheet'>
+    <style>
+        html, body { height: 100%; margin: 0; padding: 0; }
+        body {
+            background: url('https://images.pexels.com/photos/8441854/pexels-photo-8441854.jpeg?auto=compress&cs=tinysrgb&w=1600') no-repeat center center fixed;
+            background-size: cover;
+            color: #eaeaea;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            min-height: 100vh;
+        }
+        header { background: #3a7ca5cc; color: #fff; padding: 24px 0; text-align: center; box-shadow: 0 2px 8px #222; }
+        nav { background: #222b; color: #eaeaea; text-align: center; padding: 12px 0; font-size: 1.1em; }
+        nav a { color: #eaeaea; text-decoration: none; margin: 0 16px; transition: color 0.2s, text-decoration 0.2s; cursor: pointer; }
+        nav a:hover { color: #3a7ca5; text-decoration: underline; }
+        .hero-img { width: 100%; max-height: 350px; object-fit: cover; border-bottom: 4px solid #3a7ca5; }
+        .container { max-width: 900px; margin: 40px auto 200px auto; text-align: center; padding: 32px; background: rgba(45,45,45,0.85); border-radius: 16px; box-shadow: 0 2px 16px #222; }
+        .btn { background: #3a7ca5; color: #eaeaea; border: none; padding: 16px 32px; font-size: 1.2em; cursor: pointer; border-radius: 8px; box-shadow: 0 2px 8px #222; transition: background 0.2s, color 0.2s, box-shadow 0.2s; margin-top: 32px; }
+        .btn:hover { background: #eaeaea; color: #3a7ca5; box-shadow: 0 4px 16px #3a7ca5; }
+        .footer { background: #222b; color: #eaeaea; text-align: center; padding: 20px 0; position: relative; left: 0; bottom: 0; width: 100%; font-size: 1em; margin-top: 100px; }
+    </style>
+</head>
+<body>
+    <header style="display:flex;align-items:center;justify-content:flex-start;gap:24px;">
+        <img src="Ace logo.jpg" alt="Company Logo" style="height:90px;margin-bottom:0;">
+        <h1 style="margin:0;">Crystal Cleaners</h1>
+    </header>
+    <nav>
+        <a href='landing.html'>Home</a>
+        <a href='sample_customer_profiles.html'>Our Services</a>
+        <a href='insights.html'>Why Choose Us</a>
+        <a href='about.html'>About Us</a>
+        <a href='contact.html'>Contact Us</a>
+    </nav>
+    <img src='https://images.pexels.com/photos/4239037/pexels-photo-4239037.jpeg?auto=compress&cs=tinysrgb&w=1200' alt='Cleaning Theme' class='hero-img'/>
+    <div class="container">
+        <h2 style='color:#3a7ca5;'>Welcome to Crystal Cleaners</h2>
+        <p>Experience spotless spaces with our professional cleaning services for homes and businesses. Reliable, eco-friendly, and tailored to your needs.</p>
+        <button class="btn" onclick="window.location.href='sample_customer_profiles.html'">Our Services</button>
+        <button class="btn" onclick="window.location.href='insights.html'">Why Choose Us</button>
+        <button class="btn" onclick="window.location.href='about.html'">About Us</button>
+        <div style='height:400px;'></div>
+    </div>
+    <div class="footer">
+        &copy; 2025 Crystal Cleaners | Sparkling Results, Every Time
+    </div>
+</body>
+</html>

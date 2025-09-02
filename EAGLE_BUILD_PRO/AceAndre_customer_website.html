@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Customer Profiles</title>
+    <link href='https://fonts.googleapis.com/css?family=Segoe+UI:400,700&display=swap' rel='stylesheet'>
+    <style>
+        body {
+            background: url('https://images.pexels.com/photos/8441854/pexels-photo-8441854.jpeg?auto=compress&cs=tinysrgb&w=1600') no-repeat center center fixed;
+            background-size: cover;
+            color: #eaeaea;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        header { background: #3a7ca5cc; color: #fff; padding: 24px 0; text-align: center; box-shadow: 0 2px 8px #222; }
+        nav { background: #222b; color: #eaeaea; text-align: center; padding: 12px 0; font-size: 1.1em; }
+        nav a { color: #eaeaea; text-decoration: none; margin: 0 16px; transition: color 0.2s, text-decoration 0.2s; cursor: pointer; }
+        nav a:hover { color: #3a7ca5; text-decoration: underline; }
+        h2 { text-align: center; color: #3a7ca5; margin-top: 32px; }
+        table { border-collapse: collapse; width: 90%; margin: 30px auto; background: rgba(45,45,45,0.85); border-radius: 12px; box-shadow: 0 2px 16px #222; }
+        th, td { border: 1px solid #3a7ca5; padding: 8px 12px; transition: background 0.2s, color 0.2s; cursor: pointer; }
+        th { background: #3a7ca5; color: #eaeaea; }
+        tr { background: #222; }
+        th:hover, td:hover { background: #eaeaea; color: #3a7ca5; }
+        .back { display: block; margin: 20px auto; background: #3a7ca5; color: #eaeaea; border: none; padding: 10px 20px; font-size: 1em; cursor: pointer; border-radius: 8px; text-align: center; width: 200px; text-decoration: none; box-shadow: 0 2px 8px #222; transition: background 0.2s, color 0.2s, box-shadow 0.2s; }
+        .back:hover { background: #eaeaea; color: #3a7ca5; box-shadow: 0 4px 16px #3a7ca5; }
+        .footer { background: #222b; color: #eaeaea; text-align: center; padding: 20px 0; position: relative; left: 0; bottom: 0; width: 100%; font-size: 1em; margin-top: 100px; }
+    </style>
+</head>
+<body>
+    <header style="display:flex;align-items:center;justify-content:flex-start;gap:24px;">
+        <img src="Ace logo.jpg" alt="Company Logo" style="height:90px;margin-bottom:0;">
+        <h1 style="margin:0;">Crystal Cleaners</h1>
+    </header>
+    <nav>
+        <a href='landing.html'>Home</a>
+        <a href='sample_customer_profiles.html'>Our Services</a>
+        <a href='insights.html'>Why Choose Us</a>
+        <a href='about.html'>About Us</a>
+        <a href='contact.html'>Contact Us</a>
+    </nav>
+    <a class="back" href="landing.html">&#8592; Back to Landing Page</a>
+    <h2>Our Cleaning Services</h2>
+    <table id="services-table">
+        <tr><th>Service</th><th>Location</th><th>Service Type</th><th>Frequency</th><th>Special Requests</th></tr>
+        <tr onclick="showServiceInfo(this, 'home')">
+            <td>Home Cleaning</td>
+            <td><select onchange="updateLocation(this, 'home')">
+                <option>Sandton</option>
+                <option>Rosebank</option>
+                <option>Randburg</option>
+                <option>Midrand</option>
+                <option>Fourways</option>
+            </select></td>
+            <td>Deep Clean</td>
+            <td><select onchange="updateFrequency(this, 'home')">
+                <option>Weekly</option>
+                <option>Bi-Weekly</option>
+                <option>Monthly</option>
+                <option>Once-off</option>
+            </select></td>
+            <td>Pet-friendly products</td>
+        </tr>
+        <tr onclick="showServiceInfo(this, 'office')">
+            <td>Office Cleaning</td>
+            <td><select onchange="updateLocation(this, 'office')">
+                <option>Sandton</option>
+                <option>Rosebank</option>
+                <option>Randburg</option>
+                <option>Midrand</option>
+                <option>Fourways</option>
+            </select></td>
+            <td>Standard</td>
+            <td><select onchange="updateFrequency(this, 'office')">
+                <option>Daily</option>
+                <option>Weekly</option>
+                <option>Monthly</option>
+                <option>Once-off</option>
+            </select></td>
+            <td>Eco-friendly supplies</td>
+        </tr>
+        <tr onclick="showServiceInfo(this, 'carpet')">
+            <td>Carpet Cleaning</td>
+            <td><select onchange="updateLocation(this, 'carpet')">
+                <option>Sandton</option>
+                <option>Rosebank</option>
+                <option>Randburg</option>
+                <option>Midrand</option>
+                <option>Fourways</option>
+            </select></td>
+            <td>Carpet Steam</td>
+            <td><select onchange="updateFrequency(this, 'carpet')">
+                <option>Monthly</option>
+                <option>Quarterly</option>
+                <option>Once-off</option>
+            </select></td>
+            <td>Stain removal</td>
+        </tr>
+        <tr onclick="showServiceInfo(this, 'window')">
+            <td>Window Cleaning</td>
+            <td><select onchange="updateLocation(this, 'window')">
+                <option>Sandton</option>
+                <option>Rosebank</option>
+                <option>Randburg</option>
+                <option>Midrand</option>
+                <option>Fourways</option>
+            </select></td>
+            <td>Exterior</td>
+            <td><select onchange="updateFrequency(this, 'window')">
+                <option>Quarterly</option>
+                <option>Monthly</option>
+                <option>Once-off</option>
+            </select></td>
+            <td>High-rise</td>
+        </tr>
+        <tr onclick="showServiceInfo(this, 'move')">
+            <td>Move-In/Out</td>
+            <td><select onchange="updateLocation(this, 'move')">
+                <option>Sandton</option>
+                <option>Rosebank</option>
+                <option>Randburg</option>
+                <option>Midrand</option>
+                <option>Fourways</option>
+            </select></td>
+            <td>Full Service</td>
+            <td><select onchange="updateFrequency(this, 'move')">
+                <option>Once-off</option>
+                <option>Weekly</option>
+                <option>Monthly</option>
+            </select></td>
+            <td>Urgent booking</td>
+        </tr>
+    </table>
+    <script>
+        const serviceInfo = {
+            home: "<div style='margin-top:12px;color:#fff;background:#3a7ca5;padding:16px;border-radius:8px;'>Our Home Cleaning service offers deep cleaning, regular maintenance, and move-in/move-out cleans. We use pet-friendly and eco-friendly products, ensuring a safe and spotless home environment. Custom schedules available to suit your needs.</div>",
+            office: "<div style='margin-top:12px;color:#fff;background:#3a7ca5;padding:16px;border-radius:8px;'>Our Office Cleaning covers daily, weekly, or custom schedules for corporate, government, and commercial spaces. We use eco-friendly supplies and maintain a professional, healthy workspace for your staff and clients.</div>",
+            carpet: "<div style='margin-top:12px;color:#fff;background:#3a7ca5;padding:16px;border-radius:8px;'>Carpet Cleaning includes deep steam cleaning, stain removal, and deodorizing for homes, offices, and venues. We use safe, effective products to restore carpets to their best condition.</div>",
+            window: "<div style='margin-top:12px;color:#fff;background:#3a7ca5;padding:16px;border-radius:8px;'>Window Cleaning for high-rise, residential, and commercial properties. We offer interior and exterior cleaning, including hard-to-reach windows, with safety and sparkling results guaranteed.</div>",
+            move: "<div style='margin-top:12px;color:#fff;background:#3a7ca5;padding:16px;border-radius:8px;'>Move-In/Move-Out Cleaning provides thorough cleaning for property handovers, new tenants, and urgent bookings. We ensure every corner is spotless and ready for its next occupant.</div>"
+        };
+        function showServiceInfo(row, key) {
+            // Remove any open info boxes from other rows
+            document.querySelectorAll('#services-table .service-info-box').forEach(e => e.remove());
+            // If already open, close it
+            if (row.classList.contains('open-info')) {
+                row.classList.remove('open-info');
+                row.querySelector('.service-info-box').remove();
+                return;
+            }
+            row.classList.add('open-info');
+            const infoDiv = document.createElement('td');
+            infoDiv.colSpan = row.children.length;
+            infoDiv.className = 'service-info-box';
+            infoDiv.innerHTML = serviceInfo[key];
+            // Insert info row after clicked row
+            const infoRow = document.createElement('tr');
+            infoRow.appendChild(infoDiv);
+            row.parentNode.insertBefore(infoRow, row.nextSibling);
+        }
+        function updateFrequency(select, key) {
+            // Optionally, display the selected frequency in the info box or elsewhere
+            showServiceInfo(select.closest('tr'), key);
+        }
+        function updateLocation(select, key) {
+            showServiceInfo(select.closest('tr'), key);
+        }
+    </script>
+    <div class="footer">
+        &copy; 2025 Crystal Cleaners | Sparkling Results, Every Time
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Client Insights</title>
+    <link href='https://fonts.googleapis.com/css?family=Segoe+UI:400,700&display=swap' rel='stylesheet'>
+    <style>
+        body {
+            background: url('https://images.pexels.com/photos/8441854/pexels-photo-8441854.jpeg?auto=compress&cs=tinysrgb&w=1600') no-repeat center center fixed;
+            background-size: cover;
+            color: #eaeaea;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        header { background: #3a7ca5cc; color: #fff; padding: 24px 0; text-align: center; box-shadow: 0 2px 8px #222; }
+        nav { background: #222b; color: #eaeaea; text-align: center; padding: 12px 0; font-size: 1.1em; }
+        nav a { color: #eaeaea; text-decoration: none; margin: 0 16px; transition: color 0.2s, text-decoration 0.2s; cursor: pointer; }
+        nav a:hover { color: #3a7ca5; text-decoration: underline; }
+        .container { max-width: 900px; margin: 40px auto 200px auto; text-align: center; padding: 32px; background: rgba(45,45,45,0.85); border-radius: 16px; box-shadow: 0 2px 16px #222; }
+        h2 { color: #3a7ca5; margin-bottom: 32px; }
+        .insight-list { list-style: none; padding: 0; }
+        .insight-list li { background: #222; color: #eaeaea; margin: 16px 0; padding: 20px; border-radius: 8px; font-size: 1.2em; box-shadow: 0 2px 8px #222; transition: background 0.2s, color 0.2s; cursor: pointer; }
+        .insight-list li:hover { background: #3a7ca5; color: #fff; }
+        .footer { background: #222b; color: #eaeaea; text-align: center; padding: 20px 0; position: relative; left: 0; bottom: 0; width: 100%; font-size: 1em; margin-top: 100px; }
+    </style>
+</head>
+<body>
+    <header style="display:flex;align-items:center;justify-content:flex-start;gap:24px;">
+        <img src="Ace logo.jpg" alt="Company Logo" style="height:90px;margin-bottom:0;">
+        <h1 style="margin:0;">Crystal Cleaners</h1>
+    </header>
+    <nav>
+        <a href='landing.html'>Home</a>
+        <a href='sample_customer_profiles.html'>Our Services</a>
+        <a href='insights.html'>Why Choose Us</a>
+        <a href='about.html'>About Us</a>
+        <a href='contact.html'>Contact Us</a>
+    </nav>
+    <div class="container">
+        <h2>Why Choose Us</h2>
+        <ul class="insight-list">
+            <li onclick="toggleInfo(this, 'satisfaction')">Average Customer Satisfaction: 4.9/5</li>
+            <li onclick="toggleInfo(this, 'eco')">Eco-Friendly Cleaning Products Used: 100%</li>
+            <li onclick="toggleInfo(this, 'homes')">Homes Cleaned This Month: 25</li>
+            <li onclick="toggleInfo(this, 'offices')">Offices Serviced: 12</li>
+            <li onclick="toggleInfo(this, 'repeat')">Repeat Clients: 80%</li>
+            <li onclick="toggleInfo(this, 'response')">Fast Response Time: Under 2 hours</li>
+        </ul>
+        <script>
+            const infoData = {
+                satisfaction: "<div style='margin-top:12px;color:#fff;background:#3a7ca5;padding:16px;border-radius:8px;'>Our clients consistently rate us 4.9 out of 5 for reliability, professionalism, and attention to detail. We pride ourselves on exceeding expectations and delivering sparkling results every time.</div>",
+                eco: "<div style='margin-top:12px;color:#fff;background:#3a7ca5;padding:16px;border-radius:8px;'>Crystal Cleaners uses only eco-friendly, non-toxic cleaning products. We care about your health and the environment, ensuring safe spaces for families, employees, and customers.</div>",
+                homes: "<div style='margin-top:12px;color:#fff;background:#3a7ca5;padding:16px;border-radius:8px;'>This month alone, we've cleaned 25 homes, providing deep cleans, regular maintenance, and move-in/move-out services. Our team is trusted by homeowners across the region.</div>",
+                offices: "<div style='margin-top:12px;color:#fff;background:#3a7ca5;padding:16px;border-radius:8px;'>We service 12 offices, including corporate, government, and commercial spaces. Our flexible schedules and thorough cleaning help businesses maintain a professional image.</div>",
+                repeat: "<div style='margin-top:12px;color:#fff;background:#3a7ca5;padding:16px;border-radius:8px;'>80% of our clients return for regular cleaning, a testament to our quality, reliability, and customer care. We build lasting relationships with every service.</div>",
+                response: "<div style='margin-top:12px;color:#fff;background:#3a7ca5;padding:16px;border-radius:8px;'>Need urgent cleaning? Our team responds in under 2 hours, ensuring quick solutions for emergencies, last-minute bookings, and special requests.</div>"
+            };
+            function toggleInfo(elem, key) {
+                // Remove any open info boxes from other items
+                document.querySelectorAll('.insight-list li .info-box').forEach(e => e.remove());
+                // If already open, close it
+                if (elem.classList.contains('open-info')) {
+                    elem.classList.remove('open-info');
+                    elem.querySelector('.info-box').remove();
+                    return;
+                }
+                elem.classList.add('open-info');
+                const infoDiv = document.createElement('div');
+                infoDiv.className = 'info-box';
+                infoDiv.innerHTML = infoData[key];
+                elem.appendChild(infoDiv);
+            }
+        </script>
+    </div>
+    <div class="footer">
+        &copy; 2025 Crystal Cleaners | Sparkling Results, Every Time
+    </div>
+</body>
+</html>
